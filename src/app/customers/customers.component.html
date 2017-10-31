@@ -1,0 +1,22 @@
+<mat-card class="ancho">
+  <mat-card-title>Clientes</mat-card-title>
+
+  <table class="ancho">
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Email</th>
+      <th>Productos</th>
+    </tr>
+
+    <tr *ngFor="let customer of customers">
+      <td>{{customer.customerId}}</td>
+      <td>{{customer.name}}</td>
+      <td>{{customer.email}}</td>
+      <td>
+        <mat-list>
+          <mat-list-item *ngFor="let product of customer.products">{{product.name}}</mat-list-item>
+        </mat-list>
+      </td>
+  </table>
+</mat-card>

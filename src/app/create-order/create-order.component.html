@@ -1,0 +1,62 @@
+<mat-card class="ancho">
+  <mat-card-title>Crear orden</mat-card-title>
+  <mat-card-content>
+    <div style="align-content: center">
+      <form (ngSubmit)="onSubmit()" class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-select placeholder="Cliente:" #selectElem (change)="setNewCustomer(selectElem.value)" required [(ngModel)]="order.customerId"
+            name="customerId">
+            <mat-option *ngFor="let customer of customers" [value]="customer.customerId">
+              {{customer.name}}
+            </mat-option>
+          </mat-select>
+          <mat-hint align="end">Elige uno de los clientes de la lista desplegable</mat-hint>
+        </mat-form-field>
+
+        <p>
+          <mat-form-field class="example-full-width" hintLabel="Max 255 caracteres">
+            <input matInput #input placeholder="Direccion de entrega" id="deliveryAddress" required [(ngModel)]="order.deliveryAddress"
+              name="deliveryAddress" type="text" maxlength="255">
+            <mat-hint align="end">{{input.value?.length || 0}}/255</mat-hint>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field>
+            <input matInput placeholder="Fecha de creación" id="creationDate" required [(ngModel)]="fecha" name="creationDate" type="date">
+          </mat-form-field>
+        </p>
+        <div class='noList'>
+          <mat-card *ngIf="!noList">
+            <mat-card-content>
+              <mat-card-title>Productos:</mat-card-title>
+              <table class="ancho" style="
+                                font-size: 20px;">
+                <tr>
+                  <th>Producto </th>
+                  <th>Precio ($) </th>
+                  <th>Cantidad </th>
+                </tr>
+
+                <tr *ngFor="let product of customer1.products">
+                  <td>{{product.name}} </td>
+                  <td style="text-align: right">{{product.price}} </td>
+                  <td style="width: 10px;">
+                    <mat-form-field>
+                      <input matInput type="number" required min="0" max="5" value="0" name="quantitys" style="text-align: right; ">
+                    </mat-form-field>
+                  </td>
+                  <td name="productIds" style="visibility: hidden">{{product.productId}}</td>
+                </tr>
+              </table>
+
+            </mat-card-content>
+          </mat-card>
+          <div class="btn-group">
+            <button mat-raised-button type="reset" (click)="limpiar()" id="clean">Limpiar datos</button>
+            <button type="submit" class="btn btn-success" mat-raised-button color="primary">Crear orden</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </mat-card-content>
+</mat-card>
