@@ -1,10 +1,7 @@
 import { Order } from '../models/order';
 import { Customer } from '../models/customer';
-import { Product } from '../models/product';
-import { OrderDetail } from '../models/orderDetail';
 import { DataService } from '../data.service';
 import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-create-order',
@@ -15,8 +12,7 @@ import { Location } from '@angular/common';
 export class CreateOrderComponent implements OnInit {
   order = new Order;
   customers: Customer[];
-  customer1: Customer;
-  submitted = false;
+  customerSeleccionado: Customer;
   noList: boolean = true;
   fechaActual: any;
   get fecha() {
@@ -28,30 +24,23 @@ export class CreateOrderComponent implements OnInit {
       this.noList = true;
     }
     else {
-      this.customer1 = this.customers.filter(value => value.customerId === parseInt(id))[0];
+      this.customerSeleccionado = this.customers.filter(value => value.customerId === parseInt(id))[0];
       this.noList = false;
     }
   }
 
-  constructor(private dataService: DataService, private location: Location) {
+  constructor(private dataService: DataService) {
     this.fechaActual = new Date();
   }
+  
   ngOnInit() {
     this.getCustomers();
-  }
-
-  newCustomer(): void {
-    this.submitted = false;
-    this.order = new Order();
-  }
-
-  private save(): void {
-    this.dataService.create(this.order);
   }
 
   getCustomers() {
     return this.dataService.getCustomers().then(customers => this.customers = customers);
   }
+
   limpiar() {
     this.noList = true;
   }
