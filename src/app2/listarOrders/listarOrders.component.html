@@ -1,0 +1,53 @@
+<mat-card class="ancho">
+  <mat-card-title>Listar ordenes</mat-card-title>
+  <mat-card-content>
+    <mat-form-field class="example-full-width">
+      <mat-select placeholder="Cliente:" #selectCustomer required name="customerId" (click)="limpiar()">
+        <mat-option *ngFor="let customer of customers" [value]="customer.customerId">
+          {{customer.name}}
+        </mat-option>
+      </mat-select>
+      <mat-hint align="end">Elige uno de los clientes de la lista desplegable</mat-hint>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="onClickBuscar(selectCustomer.value)">Buscar</button>
+    <button mat-raised-button color="primary" (click)="onClickUltimoMes(selectCustomer.value)">Ordenes del ultimo mes</button>
+    <br>
+    <p>
+      <mat-form-field>
+        <input matInput #selectDesde placeholder="Desde" id="desde" name="desde" type="date" [(ngModel)]="fecha">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput #selectHasta placeholder="Hasta" id="hasta" name="hasta" type="date" [(ngModel)]="fecha">
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="onClickRangoFechas(selectDesde.value,selectHasta.value,selectCustomer.value)">Ordenes del rango de fechas</button>
+    </p>
+    <div class='noList'>
+      <table class="ancho" *ngIf="noList">
+        <thead>
+          <tr>
+            <th>CreationDate</th>
+            <th>OrderId</th>
+            <th>Total ($)</th>
+            <th>DeliveryAddress</th>
+            <th>products</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of orders">
+            <td>{{order.creationDate | date:'dd/MM/yyyy'}}</td>
+            <td>{{order.orderId}}</td>
+            <td>{{order.total}}</td>
+            <td>{{order.deliveryAddress}}</td>
+            <td>
+              <mat-list>
+                <mat-list-item *ngFor="let orderDetail of order.orderDetails">{{orderDetail.quantity}} x {{orderDetail.productDescription}}</mat-list-item>
+              </mat-list>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </mat-card-content>
+</mat-card>
