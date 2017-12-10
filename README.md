@@ -1,27 +1,22 @@
-# AngularOrdenes
+# AngularOrdenes (FrontEnd)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.9.
+- Para instalar Angular 4 hay que seguir las instrucciones de la pagina oficial: https://angular.io/guide/quickstart.
+- Este ejercicio hace uso de Material Design, el cual fue instalado siguiendo las instrucciones de la pagina oficial: https://material.angular.io/guide/getting-started
+- Para iniciar angular el comando usado en la respectiva ubicacion del proyecto es: ng serve --open
+- En data.service.ts se encuentra la url del BackEnd: public url = 'http://localhost:8080/';
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# SpringOrdenes (BackEnd)
 
-## Code scaffolding
+- Para hacer uso efectivo de hibernate y la conexion a mysql se debe modificar la url, nombre de usuario, contraseña y driver en src/main/resources. Actualmente tiene la siguiente configuracion:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+spring.datasource.url=jdbc:mysql://localhost:3307/tienda
 
-## Build
+spring.datasource.username=root
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+spring.datasource.password=root
 
-## Running unit tests
+spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- El proyecto es un spring boot. Para ejecutarlo en Spring Tools Suite se debe correr como Spring Boot App.
