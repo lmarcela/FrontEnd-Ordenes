@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Order } from '../models/order';
 import { Customer } from '../models/customer';
-import { OrderDetail } from '../models/orderDetail';
 import { DataService } from '../data.service';
 
 @Component({
@@ -25,10 +24,10 @@ export class ListarOrdersComponent implements OnInit {
   }
 
   getOrdersDetail() {
-    return this.dataService.getOrders().then(orders => this.orders = orders);
+    return this.dataService.getOrders().then(ordersResponse => this.orders = ordersResponse);
   }
   getCustomers() {
-    return this.dataService.getCustomers().then(customers => this.customers = customers);
+    return this.dataService.getCustomers().then(customersResponse => this.customers = customersResponse);
   }
 
   ngOnInit(): void {
@@ -37,6 +36,8 @@ export class ListarOrdersComponent implements OnInit {
   limpiar() {
     this.noList = false;
   }
+
+  //Inicio de la Programación de la accion de los botones
   onClickBuscar(cliente) {
     if (cliente != null) {
       this.dataService.ordersUrl = this.dataService.url + 'buscarOrdenesCliente?cliente=' + cliente;
@@ -71,4 +72,5 @@ export class ListarOrdersComponent implements OnInit {
       alert("Falta indicar un cliente.");
     }
   }
+  //Fin de la Programación de la accion de los botones
 }
