@@ -15,6 +15,7 @@ import {enableProdMode} from '@angular/core';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule, MatTableModule, MatSelectModule, MatInputModule, MatFormFieldModule,MatStepperModule, MatSortModule, MatListModule, MatTabsModule, MatDialogModule } from '@angular/material';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { ListProductsComponent } from './components/product/list-products/list-products.component';
 import { ProductService } from './services/product.service';
 
@@ -46,7 +47,8 @@ import { ProductService } from './services/product.service';
     MatSortModule,
     MatListModule, 
     MatTabsModule,
-    MatDialogModule
+    MatDialogModule,
+    Ng2SmartTableModule
   ],
   providers: [DataService,ProductService],
   bootstrap: [AppComponent]

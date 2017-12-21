@@ -26,3 +26,7 @@ ANGULAR COMANDS:
 
 - ng g s services/product --spec false
 - ng g c components/product/list-products --spec false -is
+
+npm: https://github.com/akveo/ng2-smart-table
+
+- npm install --save ng2-smart-table
