@@ -25,3 +25,4 @@ spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 ANGULAR COMANDS:
 
 - ng g s services/product --spec false
+- ng g c components/product/list-products --spec false -is

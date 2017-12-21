@@ -15,6 +15,8 @@ import {enableProdMode} from '@angular/core';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule, MatTableModule, MatSelectModule, MatInputModule, MatFormFieldModule,MatStepperModule, MatSortModule, MatListModule, MatTabsModule, MatDialogModule } from '@angular/material';
+import { ListProductsComponent } from './components/product/list-products/list-products.component';
+import { ProductService } from './services/product.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIco
     CreateOrderComponent,
     CustomersComponent,
     ListCustomersComponent,
-    ListarOrdersComponent
+    ListarOrdersComponent,
+    ListProductsComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,7 @@ import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIco
     MatTabsModule,
     MatDialogModule
   ],
-  providers: [DataService],
+  providers: [DataService,ProductService],
   bootstrap: [AppComponent]
 })
 
