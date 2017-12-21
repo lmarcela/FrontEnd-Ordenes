@@ -1,6 +1,6 @@
-import { Order } from '../models/order';
-import { Customer } from '../models/customer';
-import { DataService } from '../data.service';
+import { Order } from '../../models/order';
+import { Customer } from '../../models/customer';
+import { DataService } from '../../data.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

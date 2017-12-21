@@ -8,7 +8,7 @@ import { HttpParams } from "@angular/common/http";
 @Injectable()
 export class DataService {
   public url = 'http://localhost:8080/';
-  private customersUrl = this.url + 'listarClientes';
+  private customersUrl = this.url + 'customers';
   public ordersUrl = this.url + 'listarOrdenes';
   public saveOrdersUrl = this.url + 'createorder';
 

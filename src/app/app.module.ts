@@ -7,8 +7,9 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { CustomersComponent } from './customers/customers.component';
 import { DataService } from './data.service';
-import { CreateOrderComponent } from './create-order/create-order.component';
-import { ListarOrdersComponent } from './listarOrders/listarOrders.component';
+import { CreateOrderComponent } from './components/create-order/create-order.component';
+import { ListCustomersComponent } from './customers/list-customers/list-customers.component';
+import { ListarOrdersComponent } from './components/listarOrders/listarOrders.component';
 
 import {enableProdMode} from '@angular/core';
 
@@ -20,6 +21,7 @@ import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIco
     AppComponent,
     CreateOrderComponent,
     CustomersComponent,
+    ListCustomersComponent,
     ListarOrdersComponent
   ],
   imports: [
