@@ -22,3 +22,6 @@ spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 
 - El proyecto es un spring boot. Para ejecutarlo en Spring Tools Suite se debe correr como Spring Boot App.
 
+ANGULAR COMANDS:
+
+- ng g s services/product --spec false
