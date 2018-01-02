@@ -14,7 +14,7 @@ import { ListarOrdersComponent } from './components/listarOrders/listarOrders.co
 import {enableProdMode} from '@angular/core';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule, MatTableModule, MatSelectModule, MatInputModule, MatFormFieldModule,MatStepperModule, MatSortModule, MatListModule, MatTabsModule, MatDialogModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule, MatTableModule, MatSelectModule, MatInputModule, MatFormFieldModule,MatStepperModule, MatSortModule, MatListModule, MatTabsModule, MatDialogModule, MatPaginatorModule } from '@angular/material';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { ListProductsComponent } from './components/product/list-products/list-products.component';
 import { ProductService } from './services/product.service';
@@ -48,10 +48,12 @@ import { ProductService } from './services/product.service';
     MatListModule, 
     MatTabsModule,
     MatDialogModule,
-    Ng2SmartTableModule
+    Ng2SmartTableModule,
+    MatPaginatorModule
   ],
   providers: [DataService,ProductService],
   bootstrap: [AppComponent]
 })
 
-export class AppModule { }
+export class AppModule { 
+}

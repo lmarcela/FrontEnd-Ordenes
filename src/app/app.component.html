@@ -1,22 +1,18 @@
-<ng2-smart-table [settings]="settings" [source]="data"></ng2-smart-table>
-
 <mat-toolbar color="primary">
-  <span style="font-size: 30px;">Ordenes</span>
-  <span class="example-spacer"></span>
+  <mat-toolbar-row>
+    <span style="font-size: 30px;">Ordenes</span>
+  </mat-toolbar-row>
 
-  <mat-toolbar-row class="button-row">
+  <mat-toolbar-row>
     <a mat-raised-button color="accent" routerLink="add" class="general">
       <mat-icon>add_shopping_cart</mat-icon> Agregar orden</a>
     <a mat-raised-button color="accent" routerLink="customer" routerLinkActive="active" class="general">
       <mat-icon>person</mat-icon> Clientes</a>
     <a mat-raised-button color="accent" routerLink="listarorder" routerLinkActive="active" class="general">
       <mat-icon>list</mat-icon> Listar ordenes</a>
+    <a mat-raised-button color="accent" routerLink="listarproduct" routerLinkActive="active" class="general">
+      <mat-icon>list</mat-icon> Listar productos</a>
   </mat-toolbar-row>
-
 </mat-toolbar>
 
 <router-outlet></router-outlet>
-
-<app-list-products></app-list-products>
-
-

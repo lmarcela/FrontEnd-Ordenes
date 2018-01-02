@@ -30,3 +30,18 @@ ANGULAR COMANDS:
 npm: https://github.com/akveo/ng2-smart-table
 
 - npm install --save ng2-smart-table
+
+- package.json actualizado para angular Material Tables
+- npm install -d 
+
+npm install -g npm-check-updates
+ncu
+ncu -u
+npm install
+ng set warnings.typescriptMismatch=false
+ng serve -o
+
+eliminar carpeta node modules
+npm install
+ng serve -o
+
