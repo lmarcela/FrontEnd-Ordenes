@@ -19,7 +19,7 @@ resultado;
   }
 
   onSubmit(form: NgForm) {
-    
+    if(form.value.price>0){
       if (form.value.productId == null) {
         this.productService.createProduct(this.productService.selectedProduct).subscribe((product) => {
           //console.log(product);
@@ -39,7 +39,8 @@ resultado;
           //console.log(error);
           alert("Error: Ya existe un producto con ese nombre");
         })
-      }
+      }}
+      else{alert("El precio debe ser mayor a 0");}
 
       
     

@@ -7,13 +7,13 @@
         <tr>
           <!--<th>Id</th>-->
           <th>Name</th>
-          <th>Price</th>
+          <th>Price ($)</th>
           <th>Accion</th>
         </tr>
         <tr *ngFor="let product of products" (click)="updateProduct(product)">
           <!--<td>{{product.productId}}</td>-->
           <td>{{product.name}}</td>
-          <td>{{product.price}}</td>
+          <td style="text-align: center">{{product.price}}</td>
           <td>
             <a mat-raised-button color="primary" (click)="updateProduct(product)" class="general">
               <mat-icon>mode_edit</mat-icon> Edit</a>
