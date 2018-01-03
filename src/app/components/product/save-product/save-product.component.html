@@ -1,0 +1,26 @@
+<br>
+<h2>Producto</h2>
+<form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)" class="example-container">
+  <input type="hidden" name="productId" #key="ngModel" [(ngModel)]="productService.selectedProduct.productId">
+  <mat-form-field>
+    <textarea matInput name="name" #name="ngModel" [(ngModel)]="productService.selectedProduct.name" placeholder="Nombre" required></textarea>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="number" name="price" #name="ngModel" [(ngModel)]="productService.selectedProduct.price" placeholder="Precio"
+      required>
+    <span matPrefix>$&nbsp;</span>
+  </mat-form-field>
+  <div class="form-group">
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="!productForm.valid">
+      <mat-icon>save</mat-icon> Guardar
+    </button>
+    <button mat-raised-button color="accent" type="button" *ngIf="productService.selectedProduct.productId!=null" (click)="onDelete(productForm)">
+      <mat-icon>delete</mat-icon> Eliminar
+    </button>
+    <button mat-raised-button type="button" (click)="resetForm()">
+      <mat-icon>refresh</mat-icon> Limpiar
+    </button>
+  </div>
+</form>

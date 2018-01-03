@@ -10,6 +10,8 @@ import { Product } from '../models/product';
 
 @Injectable()
 export class ProductService {
+  
+  selectedProduct: Product = new Product();
   constructor(private dataService: DataService,private _http:Http) { }
 
   private baseUrl=this.dataService.url;

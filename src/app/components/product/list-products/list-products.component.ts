@@ -2,8 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Product } from '../../../models/product'
 import { ProductService } from '../../../services/product.service'
 import { Router } from '@angular/router'
-
-import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
+import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'app-list-products',
@@ -12,7 +11,27 @@ import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 })
 export class ListProductsComponent {
 
-  myFunction() {
+  private products: Product[];
+
+
+  constructor(private _productService: ProductService, private _router: Router) {
+  }
+
+  ngOnInit() {
+    this.cargarDatos();
+  }
+
+  cargarDatos() {
+    this._productService.getProducts().subscribe((products) => {
+      //console.log(products);
+      this.products = products;
+    }, (error) => {
+      console.log(error);
+    });
+    (<HTMLInputElement>document.getElementById("myInput")).value="";
+  }
+
+  search() {
     var input, filter, table, tr, td, i;
     input = document.getElementById("myInput");
     filter = input.value.toUpperCase();
@@ -30,54 +49,16 @@ export class ListProductsComponent {
     }
   }
 
-  private products : Product[];
+  updateProduct(product) {
+    /*Usar this._productService.selectedProduct = product; si se desea permitir que al modificar los datos en el form se cambien a la vez en la lista*/
+    this._productService.selectedProduct = Object.assign({}, product);
+  }
 
- 
-constructor(private _productService: ProductService) {
-  
-  this._productService.getProducts().subscribe((products) => {
-    console.log(products);
-    this.products = products;
-  }, (error) => {
-    console.log(error);
-  })
-  
-}
-deleteProduct(product) {
-  this._productService.deleteProduct(product.productId).subscribe((data) => {
-    this.products.splice(this.products.indexOf(product), 1);
-  }, (error) => {
-    console.log(error);
-  })
-}
-}
-
-
-
-  /*private products: Product[];
-
-  constructor(private _productService: ProductService, private _router: Router) { }
-
-  ngOnInit() {
-    this._productService.getProducts().subscribe((products) => {
-      console.log(products);
-      this.products = products;
+  deleteProduct(product) {
+    this._productService.deleteProduct(product.productId).subscribe((data) => {
+      this.products.splice(this.products.indexOf(product), 1);
     }, (error) => {
       console.log(error);
     })
   }
-
-  
-
-  updateProduct(product) {
-    this._productService.setter(product);
-    this._router.navigate(['/op']);
-  }
-
-  newProduct() {
-    let product = new Product();
-    this._productService.setter(product);
-    this._router.navigate(['/op']);
-
-  }
-}*/
+}

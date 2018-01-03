@@ -18,6 +18,7 @@ import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIco
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { ListProductsComponent } from './components/product/list-products/list-products.component';
 import { ProductService } from './services/product.service';
+import { SaveProductComponent } from './components/product/save-product/save-product.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,9 @@ import { ProductService } from './services/product.service';
     CustomersComponent,
     ListCustomersComponent,
     ListarOrdersComponent,
-    ListProductsComponent
+    ListProductsComponent,
+    SaveProductComponent,
+    SaveProductComponent
   ],
   imports: [
     BrowserModule,

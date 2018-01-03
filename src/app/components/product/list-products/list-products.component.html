@@ -1,38 +1,32 @@
 <div class="w3-cell-row">
-    <div class="w3-container w3-white w3-cell w3-mobile">
-        <div class="w3-container">
-            <h2>Productos</h2>
-          
-            <input class="w3-input w3-border w3-padding" type="text" placeholder="Buscar..." id="myInput" (keyup)="myFunction()">
-          
-            <table class="w3-table-all w3-margin-top" id="myTable">
-              <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Accion</th>
-              </tr>
-              <tr class="mystyle1" *ngFor="let product of products">
-                <td class="mystyle">{{product.productId}}</td>
-                <td class="mystyle">{{product.name}}</td>
-                <td class="mystyle">{{product.price}}</td>
-                <td>
-                  <a mat-raised-button color="primary" (click)="updateProduct(product)" class="general">
-                    <mat-icon>mode_edit</mat-icon> Edit</a>
-                  <a mat-raised-button color="accent" (click)="deleteProduct(product)" class="general">
-                    <mat-icon>delete</mat-icon> Delete</a>
-                </td>
-              </tr>
-            </table>
-          
-            
-          </div>
+  <div class="w3-container w3-light-gray w3-cell w3-mobile">
+    <div class="w3-container">
+      <h2>Listado de productos</h2>
+      <input class="w3-input w3-border w3-padding" type="text" placeholder="Buscar..." id="myInput" (keyup)="search()">
+      <table class="w3-table-all w3-margin-top" id="myTable">
+        <tr>
+          <!--<th>Id</th>-->
+          <th>Name</th>
+          <th>Price</th>
+          <th>Accion</th>
+        </tr>
+        <tr *ngFor="let product of products" (click)="updateProduct(product)">
+          <!--<td>{{product.productId}}</td>-->
+          <td>{{product.name}}</td>
+          <td>{{product.price}}</td>
+          <td>
+            <a mat-raised-button color="primary" (click)="updateProduct(product)" class="general">
+              <mat-icon>mode_edit</mat-icon> Edit</a>
+            <a mat-raised-button color="accent" (click)="deleteProduct(product)" class="general">
+              <mat-icon>delete</mat-icon> Delete</a>
+          </td>
+        </tr>
+      </table>
     </div>
-    <div class="w3-container w3-green w3-cell w3-mobile">
-        
-    </div>
-    
   </div>
-
-
-
+  <div class="w3-container w3-white w3-cell w3-mobile">
+    <div class="w3-container">
+      <app-save-product></app-save-product>
+    </div>
+  </div>
+</div>
