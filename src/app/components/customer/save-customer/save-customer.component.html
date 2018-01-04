@@ -1,0 +1,56 @@
+<div class="w3-cell-row">
+  <div class="w3-container w3-white w3-cell w3-mobile">
+    <div class="w3-container">
+      <br>
+      <h2>Cliente</h2>
+      <form #customerForm="ngForm" (ngSubmit)="onSubmit(customerForm)" class="example-container">
+        <input type="hidden" name="customerId" #key="ngModel" [(ngModel)]="customerService.selectedCustomer.customerId">
+        <mat-form-field>
+          <textarea matInput name="name" #name="ngModel" [(ngModel)]="customerService.selectedCustomer.name" placeholder="Nombre" required></textarea>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="email" name="email" #name="ngModel" [(ngModel)]="customerService.selectedCustomer.email" placeholder="Email"
+            required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-select name="products" #name="ngModel" [(ngModel)]="customerService.selectedCustomer.products" placeholder="Productos" multiple [(value)]="selected">
+            <mat-option *ngFor="let product of products" [value]="product">{{product.name}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p>You selected: {{selected}}</p>
+        <!--<p>ngmodel: {{customerService.selectedCustomer.products}}</p>-->
+
+        <!--<mat-selection-list #prod name="products" #name="ngModel" [(ngModel)]="customerService.selectedCustomer.products">
+          <mat-list-option *ngFor="let product of products" selected="true">
+            {{product.name}}
+          </mat-list-option>
+        </mat-selection-list>
+        
+        <p>
+          Options selected: {{prod.selectedOptions.selected.length}}
+        </p>
+      -->
+        <mat-form-field>
+          <mat-select [(value)]="selected1">
+            <mat-option>None</mat-option>
+            <mat-option value="option1">Option 1</mat-option>
+            <mat-option value="option2">Option 2</mat-option>
+            <mat-option value="option3">Option 3</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <div class="form-group">
+
+          <button mat-raised-button color="primary" type="submit" [disabled]="!customerForm.valid">
+            <mat-icon>save</mat-icon> Guardar
+          </button>
+          <button mat-raised-button type="button" (click)="resetForm()">
+            <mat-icon>refresh</mat-icon> Limpiar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

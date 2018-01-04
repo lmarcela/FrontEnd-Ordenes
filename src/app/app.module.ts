@@ -5,10 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { CustomersComponent } from './customers/customers.component';
+import { SaveCustomerComponent } from './components/customer/save-customer/save-customer.component';
 import { DataService } from './data.service';
 import { CreateOrderComponent } from './components/create-order/create-order.component';
-import { ListCustomersComponent } from './customers/list-customers/list-customers.component';
+import { ListCustomersComponent } from './components/customer/list-customers/list-customers.component';
 import { ListarOrdersComponent } from './components/listarOrders/listarOrders.component';
 
 import {enableProdMode} from '@angular/core';
@@ -19,12 +19,13 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { ListProductsComponent } from './components/product/list-products/list-products.component';
 import { ProductService } from './services/product.service';
 import { SaveProductComponent } from './components/product/save-product/save-product.component';
+import { CustomerService } from './services/customer.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateOrderComponent,
-    CustomersComponent,
+    SaveCustomerComponent,
     ListCustomersComponent,
     ListarOrdersComponent,
     ListProductsComponent,
@@ -54,7 +55,7 @@ import { SaveProductComponent } from './components/product/save-product/save-pro
     Ng2SmartTableModule,
     MatPaginatorModule
   ],
-  providers: [DataService,ProductService],
+  providers: [DataService,ProductService,CustomerService],
   bootstrap: [AppComponent]
 })
 

@@ -2,7 +2,7 @@ export class Customer {
     customerId: number;
     name: string;
     email: string;
-    products: Product;
+    products: Product[];
   }
 
   interface Product{

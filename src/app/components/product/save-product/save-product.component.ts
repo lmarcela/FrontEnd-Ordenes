@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms'
 import { ProductService } from '../../../services/product.service'
 import { ListProductsComponent } from '../list-products/list-products.component'
-import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-save-product',
@@ -10,9 +9,8 @@ import { Router } from '@angular/router'
   styles: []
 })
 export class SaveProductComponent implements OnInit {
-resultado;
 
-  constructor(public productService: ProductService, private _router: Router, public listProduct : ListProductsComponent) { }
+  constructor(public productService: ProductService, public listProduct : ListProductsComponent) { }
 
   ngOnInit() {
     this.resetForm();
