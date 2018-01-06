@@ -1,16 +1,25 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
     <span style="font-size: 30px;">Ordenes</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item color="accent" routerLink="customers" routerLinkActive="active" class="general">
+        <mat-icon>person</mat-icon>
+        <span>Clientes</span>
+      </button>
+      <button mat-menu-item color="accent" routerLink="listarorder" routerLinkActive="active" class="general">
+        <mat-icon>list</mat-icon>
+        <span>Ordenes</span>
+      </button>
+      <button mat-menu-item color="accent" routerLink="product" routerLinkActive="active" class="general">
+        <mat-icon>store</mat-icon>
+        <span>Productos</span>
+      </button>
+    </mat-menu>
   </mat-toolbar-row>
-
-  <mat-toolbar-row>
-    <a mat-raised-button color="accent" routerLink="customers" routerLinkActive="active" class="general">
-      <mat-icon>person</mat-icon> Clientes</a>
-    <a mat-raised-button color="accent" routerLink="listarorder" routerLinkActive="active" class="general">
-      <mat-icon>list</mat-icon> Ordenes</a>
-    <a mat-raised-button color="accent" routerLink="product" routerLinkActive="active" class="general">
-      <mat-icon>store</mat-icon> Productos</a>
-  </mat-toolbar-row>
+  <mat-toolbar-row></mat-toolbar-row>
 </mat-toolbar>
-
 <router-outlet></router-outlet>
