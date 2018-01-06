@@ -2,6 +2,7 @@ import { Order } from '../../models/order';
 import { Customer } from '../../models/customer';
 import { DataService } from '../../data.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-create-order',
@@ -29,10 +30,10 @@ export class CreateOrderComponent implements OnInit {
     }
   }
 
-  constructor(private dataService: DataService) {
+  constructor(private dataService: DataService, private _router: Router) {
     this.fechaActual = new Date();
   }
-  
+
   ngOnInit() {
     this.getCustomers();
   }
@@ -94,5 +95,9 @@ export class CreateOrderComponent implements OnInit {
         alert("ERROR: Se supero el maximo de unidades permitidas. El maximo permitido es 5 y su orden tiene " + unidades + " unidades.");
       }
     }
+  }
+
+  cancelar() {
+    this._router.navigate(['/listarorder']);
   }
 }

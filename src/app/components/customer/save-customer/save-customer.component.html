@@ -21,15 +21,21 @@
           </mat-select>
         </mat-form-field>
         <!--<p>You selected: {{selected}}</p>-->
-        <div class="form-group">
-          <button mat-raised-button color="primary" type="submit" [disabled]="!customerForm.valid">
-            <mat-icon>save</mat-icon> Guardar
+        <br>
+        <div style="text-align: center;">
+          <button mat-fab matTooltip="Regresar a clientes" type="button" (click)="cancelar()">
+            <mat-icon>arrow_back</mat-icon>
           </button>
-          <button mat-raised-button type="button" (click)="resetForm()">
-            <mat-icon>refresh</mat-icon> Limpiar
+          <button mat-fab matTooltip="Guardar" color="primary" type="submit" [disabled]="!customerForm.valid">
+            <mat-icon>save</mat-icon>
+          </button>
+          <button mat-fab matTooltip="Limpiar" type="button" (click)="resetForm()">
+            <mat-icon>refresh</mat-icon>
           </button>
         </div>
       </form>
+      <br>
+      <br>
     </div>
   </div>
 </div>
