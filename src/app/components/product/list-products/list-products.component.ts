@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Product } from '../../../models/product'
 import { ProductService } from '../../../services/product.service'
-import { Router } from '@angular/router'
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 
 @Component({
@@ -14,7 +13,7 @@ export class ListProductsComponent {
   private products: Product[];
 
 
-  constructor(private _productService: ProductService, private _router: Router) {
+  constructor(private _productService: ProductService) {
   }
 
   ngOnInit() {

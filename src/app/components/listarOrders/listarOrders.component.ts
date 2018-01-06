@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Order } from '../../models/order';
 import { Customer } from '../../models/customer';
 import { DataService } from '../../data.service';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,7 @@ export class ListarOrdersComponent implements OnInit {
     return this.fechaActual.toISOString().substring(0, 10);
   }
 
-  constructor(private dataService: DataService) {
+  constructor(private dataService: DataService, private _router: Router) {
     this.fechaActual = new Date();
   }
 
@@ -38,6 +39,10 @@ export class ListarOrdersComponent implements OnInit {
   }
 
   //Inicio de la Programación de la accion de los botones
+  createOrder(){
+    this._router.navigate(['/add']);
+  }
+
   onClickBuscar(cliente) {
     if (cliente != null) {
       this.dataService.ordersUrl = this.dataService.url + 'buscarOrdenesCliente?cliente=' + cliente;
