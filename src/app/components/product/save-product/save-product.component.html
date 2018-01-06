@@ -11,16 +11,17 @@
       required>
     <span matPrefix>$&nbsp;</span>
   </mat-form-field>
-  <div class="form-group">
 
-    <button mat-raised-button color="primary" type="submit" [disabled]="!productForm.valid">
-      <mat-icon>save</mat-icon> Guardar
+  <br>
+  <div style="text-align: center;">
+    <button mat-fab matTooltip="Guardar" color="primary" type="submit" [disabled]="!productForm.valid">
+      <mat-icon>save</mat-icon>
     </button>
-    <button mat-raised-button color="accent" type="button" *ngIf="productService.selectedProduct.productId!=null" (click)="onDelete(productForm)">
-      <mat-icon>delete</mat-icon> Eliminar
+    <button mat-fab matTooltip="Limpiar" color="basic" type="button" (click)="resetForm()">
+      <mat-icon>refresh</mat-icon>
     </button>
-    <button mat-raised-button type="button" (click)="resetForm()">
-      <mat-icon>refresh</mat-icon> Limpiar
+    <button mat-fab matTooltip="Eliminar" type="button" *ngIf="productService.selectedProduct.productId!=null" (click)="onDelete(productForm)">
+      <mat-icon>delete</mat-icon>
     </button>
   </div>
 </form>

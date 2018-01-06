@@ -18,11 +18,11 @@
   width: 100%;
 }
 
-.ancho {
+/*.ancho {
   max-width: 700px;
   margin: 0 auto;
   font-size: 20px;
-}
+}*/
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
