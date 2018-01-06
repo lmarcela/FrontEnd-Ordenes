@@ -1,0 +1,60 @@
+<div class="w3-cell-row">
+  <div class="w3-container w3-white w3-cell w3-mobile">
+    <br>
+    <h2>Listar ordenes</h2>
+    <a mat-raised-button color="primary" (click)="createOrder()" class="general">
+      <mat-icon>add_shopping_cart</mat-icon>Agregar orden</a>
+    <br>
+    <br>
+    <form class="example-container">
+      <div style="text-align: center;">
+        <mat-form-field>
+          <mat-select style="max-width: 800px;" placeholder="Cliente:" #selectCustomer required name="customerId" (click)="limpiar()">
+            <mat-option *ngFor="let customer of customers" [value]="customer.customerId">
+              {{customer.name}}
+            </mat-option>
+          </mat-select>
+          <!--<mat-hint align="end">Elige uno de los clientes de la lista desplegable</mat-hint>-->
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="onClickBuscar(selectCustomer.value)">
+          <mat-icon>search</mat-icon>Buscar
+        </button>
+        <button mat-raised-button color="primary" (click)="onClickUltimoMes(selectCustomer.value)">
+          <mat-icon>youtube_searched_for</mat-icon>Ordenes del ultimo mes
+        </button>
+        <br>
+        <br>
+        <mat-form-field>
+          <input matInput #selectDesde placeholder="Desde" id="desde" name="desde" type="date" [(ngModel)]="fecha">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput #selectHasta placeholder="Hasta" id="hasta" name="hasta" type="date" [(ngModel)]="fecha">
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="onClickRangoFechas(selectDesde.value,selectHasta.value,selectCustomer.value)">
+          <mat-icon>date_range</mat-icon>Ordenes del rango de fechas
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<div class='noList w3-container w3-responsive'>
+  <table class="w3-table-all w3-margin-top" *ngIf="noList">
+    <tr>
+      <th>CreationDate</th>
+      <th>OrderId</th>
+      <th>Total ($)</th>
+      <th>DeliveryAddress</th>
+      <th>Products</th>
+    </tr>
+    <tr *ngFor="let order of orders">
+      <td>{{order.creationDate | date:'dd/MM/yyyy'}}</td>
+      <td>{{order.orderId}}</td>
+      <td>{{order.total}}</td>
+      <td>{{order.deliveryAddress}}</td>
+      <td>
+        <p *ngFor="let orderDetail of order.orderDetails">{{orderDetail.quantity}} x {{orderDetail.productDescription}}</p>
+      </td>
+    </tr>
+  </table>
+</div>
+<br>

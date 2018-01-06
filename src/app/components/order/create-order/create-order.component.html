@@ -27,10 +27,9 @@
         </p>
         <div class='noList'>
           <mat-card *ngIf="!noList">
-            <mat-card-content>
+            <mat-card-content class="w3-container w3-responsive">
               <mat-card-title>Productos:</mat-card-title>
-              <table class="ancho" style="
-                                font-size: 20px;">
+              <table  class="w3-table-all w3-margin-top">
                 <tr>
                   <th>Producto </th>
                   <th>Precio ($) </th>
@@ -51,11 +50,16 @@
 
             </mat-card-content>
           </mat-card>
-          <div class="btn-group">
-            <button mat-raised-button type="reset" (click)="limpiar()" id="clean">Limpiar datos</button>
-            <button type="submit" class="btn btn-success" mat-raised-button color="primary">Crear orden</button>
-            <button mat-raised-button type="button" (click)="cancelar()">
-              <mat-icon>cancel</mat-icon> Cancelar
+          <br>
+          <div style="text-align: center;">
+            <button mat-fab matTooltip="Regresar a ordenes" type="button" (click)="cancelar()">
+              <mat-icon>arrow_back</mat-icon>
+            </button>
+            <button mat-fab matTooltip="Crear orden" color="primary" type="submit">
+              <mat-icon>save</mat-icon>
+            </button>
+            <button mat-fab matTooltip="Limpiar datos" type="reset" (click)="limpiar()"  id="clean">
+              <mat-icon>refresh</mat-icon>
             </button>
           </div>
         </div>

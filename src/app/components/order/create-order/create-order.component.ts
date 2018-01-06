@@ -1,13 +1,13 @@
-import { Order } from '../../models/order';
-import { Customer } from '../../models/customer';
-import { DataService } from '../../data.service';
+import { Order } from '../../../models/order';
+import { Customer } from '../../../models/customer';
+import { DataService } from '../../../data.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-create-order',
   templateUrl: './create-order.component.html',
-  styleUrls: ['./create-order.component.css']
+  styleUrls: []
 })
 
 export class CreateOrderComponent implements OnInit {

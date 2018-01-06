@@ -1,7 +1,7 @@
-import { CreateOrderComponent } from './components/create-order/create-order.component';
+import { CreateOrderComponent } from './components/order/create-order/create-order.component';
 import { SaveCustomerComponent } from './components/customer/save-customer/save-customer.component';
 import { ListCustomersComponent } from './components/customer/list-customers/list-customers.component';
-import { ListarOrdersComponent } from './components/listarOrders/listarOrders.component';
+import { ListarOrdersComponent } from './components/order/listarOrders/listarOrders.component';
 import { ListProductsComponent } from './components/product/list-products/list-products.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
