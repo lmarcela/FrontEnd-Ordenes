@@ -13,7 +13,7 @@ import { Router } from '@angular/router'
 export class ListCustomersComponent implements OnInit {
   customers: Customer[];
 
-  constructor(private customerService: CustomerService, private _router:Router) { }
+  constructor(private customerService: CustomerService, private _router: Router) { }
 
   getCustomers() {
     this.customerService.getCustomers().subscribe((customers) => {
@@ -46,11 +46,25 @@ export class ListCustomersComponent implements OnInit {
     }
   }
 
-  updateCustomer(customer){
+  createCustomer() {
+    this._router.navigate(['/customer']);
+  }
+
+  updateCustomer(customer) {
     this.customerService.setter(customer);
 
     this.customerService.selectedCustomer = Object.assign({}, customer);
     this._router.navigate(['/customer']);
+  }
+
+  deleteCustomer(customer) {
+    if (confirm("Are you sure to delete this customer ?") == true) {
+      this.customerService.deleteCustomer(customer.customerId).subscribe((data) => {
+        this.customers.splice(this.customers.indexOf(customer), 1);
+      }, (error) => {
+        console.log(error);
+      })
+    }
   }
 
 }

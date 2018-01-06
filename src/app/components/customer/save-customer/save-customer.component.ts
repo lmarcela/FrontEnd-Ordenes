@@ -46,6 +46,7 @@ export class SaveCustomerComponent {
         this.customerService.createCustomer(this.customerService.selectedCustomer).subscribe((customer) => {
           console.log(customer);
           this._router.navigate(['/customers']);
+          this.resetForm(form);
         }, (error) => {
           console.log(error);
           alert("Error: Ya existe un cliente con ese nombre");

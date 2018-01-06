@@ -1,24 +1,26 @@
-<h2>Listado de clientes</h2>
+<div class="w3-container w3-white">
+  <h2>Listado de clientes</h2>
+
+  <a mat-raised-button color="primary" (click)="createCustomer()" class="general">
+    <mat-icon>person_add</mat-icon> Nuevo</a>
   <input class="w3-input w3-border w3-padding" type="text" placeholder="Buscar..." id="myInput" (keyup)="search()">
+</div>
+
 <div class="w3-container w3-white w3-responsive">
-  
   <table class="w3-table-all w3-margin-top" id="myTable">
     <tr>
-      <th>ID</th>
+      <!--<th>ID</th>-->
       <th>Nombre</th>
       <th>Email</th>
       <th>Productos</th>
       <th>Accion</th>
     </tr>
-    <tr *ngFor="let customer of customers" (click)="updateCustomer(customer)">
-      <td>{{customer.customerId}}</td>
+    <tr *ngFor="let customer of customers">
+      <!--<td>{{customer.customerId}}</td>-->
       <td>{{customer.name}}</td>
       <td>{{customer.email}}</td>
       <td>
         <p *ngFor="let product of customer.products">{{product.name}}</p>
-        <!--<mat-list>
-                  <mat-list-item *ngFor="let product of customer.products">{{product.name}}</mat-list-item>
-                </mat-list>-->
       </td>
       <td>
         <a mat-raised-button color="primary" (click)="updateCustomer(customer)" class="general">
