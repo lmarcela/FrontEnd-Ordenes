@@ -7,57 +7,41 @@ import { ProductService } from '../../../services/product.service'
 import { Product } from '../../../models/product'
 import { Router } from '@angular/router'
 
-
 @Component({
   selector: 'app-save-customer',
   templateUrl: './save-customer.component.html',
   styleUrls: [],
 })
 
-export class SaveCustomerComponent implements OnInit {
-  selected1 = ['option2','option1'];
-  //selected=this.customerService.selectedCustomer.products;
+export class SaveCustomerComponent {
   customers: Customer[];
-  toppings = new FormControl();
   private products: Product[];
-p : Product[];
-  //selected;
-  productList = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
-  constructor(public customerService: CustomerService,private _productService: ProductService, private _router:Router) {
-
-    //this.selected=customerService.selectedCustomer.products
-    this.p = this.customerService.selectedCustomer.products;
-    //this.selected = this.p;
-
-    for (let i = 0; i < this.p.length; i++) {
-      console.log("productos aqui: "+this.p[i].name+"  "+this.p[i].productId);
-
-      //this.selected = this.p[i]
-      //customerService.selectedCustomer.products = this.selected
-    }
-    customerService.selectedCustomer.products = this.p;
-   }
-
-  ngOnInit() {
+  aux: Product[];
+  constructor(public customerService: CustomerService, private _productService: ProductService, private _router: Router) {
+    this.aux = this.customerService.selectedCustomer.products;
     this._productService.getProducts().subscribe((products) => {
       //console.log(products);
       this.products = products;
+      //Inicio: Indicar que opciones seleccionar EJ: customerService.selectedCustomer.products=[this.products[1], this.products[2]]
+      for (let j = 0; j < this.aux.length; j++) {
+        for (let i = 0; i < this.products.length; i++) {
+          if (this.aux[j].productId == this.products[i].productId) {
+            this.customerService.selectedCustomer.products[j] = this.products[i]
+          }
+        }
+      }
+      //Fin: Indicar que opciones seleccionar
     }, (error) => {
       console.log(error);
     });
-
-    //this.resetForm();
-
   }
 
   onSubmit(form: NgForm) {
-    //alert("name "+this.customerService.selectedCustomer.name+"; email: "+this.customerService.selectedCustomer.email+"; productos: "+this.customerService.selectedCustomer.products);
-    this.p = this.customerService.selectedCustomer.products;
-
-    for (let i = 0; i < this.p.length; i++) {
-      console.log(this.p[i].name+"  "+this.p[i].productId);
+    this.aux = this.customerService.selectedCustomer.products;
+    for (let i = 0; i < this.aux.length; i++) {
+      console.log(this.aux[i].name + "  " + this.aux[i].productId);
     }
-    //if(form.value.price>0){
+    if (form.value.products.length > 0) {
       if (form.value.customerId == null) {
         this.customerService.createCustomer(this.customerService.selectedCustomer).subscribe((customer) => {
           console.log(customer);
@@ -77,11 +61,8 @@ p : Product[];
           alert("Error: Ya existe un cliente con ese nombre");
         })
       }
-    //}
-      //else{alert("El precio debe ser mayor a 0");}
-
-      
-    
+    }
+    else { alert("El cliente debe tener al menos un producto"); }
   }
 
   resetForm(form?: NgForm) {
@@ -92,7 +73,7 @@ p : Product[];
       customerId: null,
       name: '',
       email: '',
-      products : null,
+      products: null,
     }
   }
 

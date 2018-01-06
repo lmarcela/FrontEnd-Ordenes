@@ -1,53 +1,31 @@
-<div class="w3-cell-row">
-  <div class="w3-container w3-white w3-cell w3-mobile">
-    <div class="w3-container">
-      <h2>Listado de clientes</h2>
-      <input class="w3-input w3-border w3-padding" type="text" placeholder="Buscar..." id="myInput" (keyup)="search()">
-      <table class="w3-table-all w3-margin-top" id="myTable">
-        <tr>
-          <th>ID</th>
-          <th>Nombre</th>
-          <th>Email</th>
-          <th>Productos</th>
-          <th>Accion</th>
-        </tr>
-        <tr *ngFor="let customer of customers" (click)="updateCustomer(customer)">
-            <td>{{customer.customerId}}</td>
-            <td>{{customer.name}}</td>
-            <td>{{customer.email}}</td>
-            <td>
-                <mat-list>
-                  <mat-list-item *ngFor="let product of customer.products">{{product.name}}</mat-list-item>
-                </mat-list>
-              </td>
-          <td>
-            <a mat-raised-button color="primary" (click)="updateCustomer(customer)" class="general">
-              <mat-icon>mode_edit</mat-icon> Edit</a>
-            <a mat-raised-button color="accent" (click)="deleteCustomer(customer)" class="general">
-              <mat-icon>delete</mat-icon> Delete</a>
-          </td>
-        </tr>
-      </table>
-    </div>
-  </div>
-</div>
-
-<table class="ancho">
+<h2>Listado de clientes</h2>
+  <input class="w3-input w3-border w3-padding" type="text" placeholder="Buscar..." id="myInput" (keyup)="search()">
+<div class="w3-container w3-white w3-responsive">
+  
+  <table class="w3-table-all w3-margin-top" id="myTable">
     <tr>
       <th>ID</th>
       <th>Nombre</th>
       <th>Email</th>
       <th>Productos</th>
+      <th>Accion</th>
     </tr>
-  
-    <tr *ngFor="let customer of customers">
+    <tr *ngFor="let customer of customers" (click)="updateCustomer(customer)">
       <td>{{customer.customerId}}</td>
       <td>{{customer.name}}</td>
       <td>{{customer.email}}</td>
       <td>
-        <mat-list>
-          <mat-list-item *ngFor="let product of customer.products">{{product.name}}</mat-list-item>
-        </mat-list>
+        <p *ngFor="let product of customer.products">{{product.name}}</p>
+        <!--<mat-list>
+                  <mat-list-item *ngFor="let product of customer.products">{{product.name}}</mat-list-item>
+                </mat-list>-->
+      </td>
+      <td>
+        <a mat-raised-button color="primary" (click)="updateCustomer(customer)" class="general">
+          <mat-icon>mode_edit</mat-icon> Edit</a>
+        <a mat-raised-button color="accent" (click)="deleteCustomer(customer)" class="general">
+          <mat-icon>delete</mat-icon> Delete</a>
       </td>
     </tr>
   </table>
+</div>
