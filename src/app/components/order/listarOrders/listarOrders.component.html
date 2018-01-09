@@ -52,7 +52,7 @@
       <td>{{order.total}}</td>
       <td>{{order.deliveryAddress}}</td>
       <td>
-        <p *ngFor="let orderDetail of order.orderDetails">{{orderDetail.quantity}} x {{orderDetail.productDescription}}</p>
+        <label *ngFor="let orderDetail of order.orderDetails">{{orderDetail.quantity}} x {{orderDetail.productDescription}}</label>
       </td>
     </tr>
   </table>

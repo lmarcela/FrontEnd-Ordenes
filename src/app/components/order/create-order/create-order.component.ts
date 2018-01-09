@@ -80,6 +80,7 @@ export class CreateOrderComponent implements OnInit {
         try {
           this.dataService.create(data);
           alert("Se creó la orden.");
+          //console.log("datos enviados: "+data["customerId"]+" ; "+data["deliveryAddress"]+" ; "+data["creationDate"]+" ; "+data["productIds"]+" ; "+data["productQuantitys"]+" . ");
           document.getElementById("clean").click();
         }
         catch (error) {

@@ -45,7 +45,7 @@ export class ListarOrdersComponent implements OnInit {
 
   onClickBuscar(cliente) {
     if (cliente != null) {
-      this.dataService.ordersUrl = this.dataService.url + 'buscarOrdenesCliente?cliente=' + cliente;
+      this.dataService.ordersUrl = this.dataService.url + 'order/customer/' + cliente;
       this.dataService.getOrdersDetail();
       this.getOrdersDetail();
       this.noList = true;
@@ -56,7 +56,7 @@ export class ListarOrdersComponent implements OnInit {
   }
   onClickUltimoMes(cliente) {
     if (cliente != null) {
-      this.dataService.ordersUrl = this.dataService.url + 'buscarOrdenesClienteUltimoMes?cliente=' + cliente;
+      this.dataService.ordersUrl = this.dataService.url + 'order/customer/' + cliente+"/ultimoMes";
       this.dataService.getOrdersDetail();
       this.getOrdersDetail();
       this.noList = true;
@@ -67,7 +67,7 @@ export class ListarOrdersComponent implements OnInit {
   }
   onClickRangoFechas(desde, hasta, cliente) {
     if (cliente != null) {
-      this.dataService.ordersUrl = this.dataService.url + 'buscarOrdenesClienteFechas?cliente=' + cliente + "&fechaInicio=" + desde + "&fechaFin=" + hasta;
+      this.dataService.ordersUrl = this.dataService.url + 'order/customer/' + cliente + "/desde/" + desde + "/hasta/" + hasta;
       console.log("url: " + this.dataService.ordersUrl);
       this.dataService.getOrdersDetail();
       this.getOrdersDetail();
