@@ -9,7 +9,7 @@ import { HttpParams } from "@angular/common/http";
 export class DataService {
   public url = 'http://localhost:8080/';
   private customersUrl = this.url + 'customers';
-  public ordersUrl = this.url + 'listarOrdenes';
+  public ordersUrl;
   public saveOrdersUrl = this.url + 'order';
 
 

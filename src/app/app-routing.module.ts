@@ -7,16 +7,16 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-   { path: '', redirectTo: 'listarorder', pathMatch: 'full' },
-   { path: 'add', component: CreateOrderComponent },
-   { path: 'customer', component: SaveCustomerComponent },
-   { path: 'listarorder', component: ListarOrdersComponent },
-   { path: 'customers', component: ListCustomersComponent },
-   { path: 'product', component: ListProductsComponent },
+  { path: '', redirectTo: 'listarorder', pathMatch: 'full' },
+  { path: 'add', component: CreateOrderComponent },
+  { path: 'customer', component: SaveCustomerComponent },
+  { path: 'listarorder', component: ListarOrdersComponent },
+  { path: 'customers', component: ListCustomersComponent },
+  { path: 'product', component: ListProductsComponent },
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
-  exports: [ RouterModule ]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

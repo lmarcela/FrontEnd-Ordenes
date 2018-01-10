@@ -7,11 +7,11 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { DataService } from './data.service';
 
-import {enableProdMode} from '@angular/core';
+import { enableProdMode } from '@angular/core';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule, MatTableModule, MatSelectModule, MatInputModule, MatFormFieldModule,MatStepperModule, MatSortModule, MatListModule, MatTabsModule, MatDialogModule, MatPaginatorModule } from '@angular/material';
-import {MatTooltipModule} from '@angular/material/tooltip';
+import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule, MatTableModule, MatSelectModule, MatInputModule, MatFormFieldModule, MatStepperModule, MatSortModule, MatListModule, MatTabsModule, MatDialogModule, MatPaginatorModule } from '@angular/material';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 //Componentes
 import { ListCustomersComponent } from './components/customer/list-customers/list-customers.component';
@@ -53,15 +53,15 @@ import { CustomerService } from './services/customer.service';
     MatFormFieldModule,
     MatStepperModule,
     MatSortModule,
-    MatListModule, 
+    MatListModule,
     MatTabsModule,
     MatDialogModule,
     MatPaginatorModule,
     MatTooltipModule
   ],
-  providers: [DataService,ProductService,CustomerService],
+  providers: [DataService, ProductService, CustomerService],
   bootstrap: [AppComponent]
 })
 
-export class AppModule { 
+export class AppModule {
 }

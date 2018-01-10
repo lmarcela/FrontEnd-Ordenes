@@ -39,7 +39,7 @@ export class ListarOrdersComponent implements OnInit {
   }
 
   //Inicio de la Programación de la accion de los botones
-  createOrder(){
+  createOrder() {
     this._router.navigate(['/add']);
   }
 
@@ -56,7 +56,7 @@ export class ListarOrdersComponent implements OnInit {
   }
   onClickUltimoMes(cliente) {
     if (cliente != null) {
-      this.dataService.ordersUrl = this.dataService.url + 'order/customer/' + cliente+"/ultimoMes";
+      this.dataService.ordersUrl = this.dataService.url + 'order/customer/' + cliente + "/ultimoMes";
       this.dataService.getOrdersDetail();
       this.getOrdersDetail();
       this.noList = true;

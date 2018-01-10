@@ -27,7 +27,7 @@ export class ListProductsComponent {
     }, (error) => {
       console.log(error);
     });
-    (<HTMLInputElement>document.getElementById("myInput")).value="";
+    (<HTMLInputElement>document.getElementById("myInput")).value = "";
   }
 
   search() {

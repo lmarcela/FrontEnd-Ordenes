@@ -10,14 +10,14 @@ import { ListProductsComponent } from '../list-products/list-products.component'
 })
 export class SaveProductComponent implements OnInit {
 
-  constructor(public productService: ProductService, public listProduct : ListProductsComponent) { }
+  constructor(public productService: ProductService, public listProduct: ListProductsComponent) { }
 
   ngOnInit() {
     this.resetForm();
   }
 
   onSubmit(form: NgForm) {
-    if(form.value.price>0){
+    if (form.value.price > 0) {
       if (form.value.productId == null) {
         this.productService.createProduct(this.productService.selectedProduct).subscribe((product) => {
           //console.log(product);
@@ -37,11 +37,12 @@ export class SaveProductComponent implements OnInit {
           //console.log(error);
           alert("Error: Ya existe un producto con ese nombre");
         })
-      }}
-      else{alert("El precio debe ser mayor a 0");}
+      }
+    }
+    else { alert("El precio debe ser mayor a 0"); }
 
-      
-    
+
+
   }
 
   resetForm(form?: NgForm) {

@@ -78,7 +78,7 @@ export class SaveCustomerComponent {
     }
   }
 
-  cancelar(){
+  cancelar() {
     this._router.navigate(['/customers']);
     this.resetForm();
   }
