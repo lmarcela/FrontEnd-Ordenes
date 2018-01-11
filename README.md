@@ -7,17 +7,13 @@ Esta aplicación consiste en un sistema que permite realizar ordenes de producto
 	
 	Ordenes: Crear, Buscar ordenes de un cliente, Buscar ordenes del ultimo mes de un cliente, Buscar ordenes de un cliente por un rango de fechas. (Al crear una orden se le indica cliente, dirección de entrega, fecha de creación, cantidad de cada producto asociado con máximo de 5 unidades totales).
 
-- Proyecto Angular con uso de Material Design, w3.css, Responsive Design y conexion a proyecto JAVA con uso de Spring Framework y base de datos configurada desde hibernate. El backEnd esta disponible en: https://github.com/lmarcela/BackEnd-Ordenes. Esta aplicación consiste en un sistema que permite realizar ordenes de productos para clientes.
-
-- Para instalar Angular 4 hay que seguir las instrucciones de la pagina oficial: https://angular.io/guide/quickstart.
-- Este ejercicio hace uso de Material Design, el cual fue instalado siguiendo las instrucciones de la pagina oficial: https://material.angular.io/guide/getting-started
-- Para iniciar angular el comando usado en la respectiva ubicacion del proyecto es: ng serve --open
+- Proyecto Angular con uso de Material Design, w3.css, Responsive Design y conexion a proyecto JAVA con uso de Spring Framework y base de datos configurada desde hibernate. El backEnd esta disponible en: https://github.com/lmarcela/BackEnd-Ordenes. 
 - En data.service.ts se encuentra la url del BackEnd: public url = 'http://localhost:8080/';
 
 Secciones del README:
-- <a href="https://github.com/lmarcela/BackEnd-Ordenes#vistas">Vistas: menú, clientes, productos, ordenes </a> 
-- <a href="https://github.com/lmarcela/BackEnd-Ordenes#angular-comands">ANGULAR COMANDS</a> 
-- <a href="https://github.com/lmarcela/BackEnd-Ordenes#comandos-para-git">COMANDOS PARA GIT</a> 
+- <a href="https://github.com/lmarcela/FrontEnd-Ordenes#vistas">Vistas.</a> menú, clientes, productos, ordenes
+- <a href="https://github.com/lmarcela/FrontEnd-Ordenes#angular-comands">ANGULAR COMANDS</a> 
+- <a href="https://github.com/lmarcela/FrontEnd-Ordenes#comandos-para-git">COMANDOS PARA GIT</a> 
 
 ## Vistas
 
@@ -34,7 +30,6 @@ Secciones del README:
 
 **Crear cliente**
 ![Vista de Crear cliente](https://github.com/lmarcela/FrontEnd-Ordenes/blob/master/static/img/README/3.png)
-![Vista de Crear cliente](https://github.com/lmarcela/FrontEnd-Ordenes/blob/master/static/img/README/4.png)
 
 **Activación de editar cliente**
 ![Vista de Activación de editar cliente](https://github.com/lmarcela/FrontEnd-Ordenes/blob/master/static/img/README/5.png)
@@ -88,6 +83,9 @@ Secciones del README:
     
     CREAR PROYECTO ANGULAR (RESTCLIENT): ng new nombreProyecto
     ABRIR PROYECTO EN VSCODE DESDE CONSOLA (Dentro de la carpeta del proyecto Angular): code .
+
+- Para instalar Angular 4 hay que seguir las instrucciones de la pagina oficial: https://angular.io/guide/quickstart.
+- Este ejercicio hace uso de Material Design, el cual fue instalado siguiendo las instrucciones de la pagina oficial: https://material.angular.io/guide/getting-started
 
 - Recomendaciones en caso de actualizar package.json:
 
