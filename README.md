@@ -37,8 +37,6 @@ Secciones del README:
 **Activación de eliminar cliente**
 ![Vista de Activación de eliminar cliente](https://github.com/lmarcela/FrontEnd-Ordenes/blob/master/static/img/README/6.png)
 
-
-
 - **Vista de productos (http://localhost:4200/product)**	
 
 **Listar productos con panel de edición < Móvil y normal >**
@@ -58,6 +56,7 @@ Secciones del README:
 
 
 - **Vista de ordenes (http://localhost:4200/listarorder & http://localhost:4200/add)**	
+
 **Listar ordenes**
 ![Vista de Listar ordenes](https://github.com/lmarcela/FrontEnd-Ordenes/blob/master/static/img/README/12.png)
 
@@ -89,16 +88,16 @@ Secciones del README:
 
 - Recomendaciones en caso de actualizar package.json:
 
-    npm install -d 
-    npm install -g npm-check-updates
-    ncu
-    ncu -u
-    npm install
-    ng set warnings.typescriptMismatch=false
-    ng serve -o
-    eliminar carpeta node modules
-    npm install
-    ng serve -o
+        npm install -d 
+        npm install -g npm-check-updates
+        ncu
+        ncu -u
+        npm install
+        ng set warnings.typescriptMismatch=false
+        ng serve -o
+        eliminar carpeta node modules
+        npm install
+        ng serve -o
 
 
 ## COMANDOS PARA GIT
